@@ -14,7 +14,9 @@ class App extends React.Component {
   }
   clickfunc(x) {
     if (x === 'c') {
-      this.setState({ value: "" });
+      this.setState({ value: "" },()=>{
+        this.props.display(this.state.value)
+      });
     }
     else if (x !== '=') {
       this.setState({ value: this.state.value + x },()=>{
